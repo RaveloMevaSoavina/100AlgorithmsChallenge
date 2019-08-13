@@ -2,12 +2,12 @@ function add(param1: number, param2: number): number {
   return param1 + param2;
 }
 
-function add2(param1: number[]): number {
-  let sum = 0;
-  for (let i = 0; i < arguments.length; i++){
-    sum += arguments[i];
-  }
-  return sum;
+function add2(...param1: number[]): number {
+  let total = 0;
+  param1.forEach(function(el){
+    total += el;
+  });
+  return total;
 }
 console.log(add(1, 2));
 console.log(add(3, 2));
